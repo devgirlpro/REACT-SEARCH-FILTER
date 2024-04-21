@@ -10,7 +10,10 @@ function App() {
   const searchHandle = (event) => {
     if (event.key === 'Enter') {
       const filtered = Users.filter((user) =>
-        user.first_name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+        user.first_name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+        user.last_name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+        user.email.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+
       );
       setFilteredUser(filtered);
     } else {
