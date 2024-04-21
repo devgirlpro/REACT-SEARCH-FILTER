@@ -28,8 +28,11 @@ const searchHandle = (event) => {
        {filteredUser.length > 0 ? (
         filteredUser.map((user) => (
           <li key={user.id} className="listItem">{user.first_name}</li>
-        ) )
-       ) : (<li><h3>No Resoult Found !</h3></li>)}
+        ))
+       ) : query.length === 0 ? (Users.map((user) => (
+        <li key={user.id} className="listItem">{user.first_name}</li>
+       ))
+       ) : <li><h3>No Resoult Found!</h3></li>}
       </ul>
     </div>
   );
